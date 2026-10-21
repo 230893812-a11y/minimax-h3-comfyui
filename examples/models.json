@@ -1,0 +1,5 @@
+[
+  {"name": "diffusion model", "path": "models/diffusion_models/REPLACE_ME.safetensors", "size": null, "sha256": null},
+  {"name": "text encoder", "path": "models/text_encoders/REPLACE_ME.safetensors", "size": null, "sha256": null},
+  {"name": "video VAE", "path": "models/vae/REPLACE_ME.safetensors", "size": null, "sha256": null}
+]

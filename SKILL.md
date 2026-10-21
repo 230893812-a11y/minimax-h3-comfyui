@@ -29,6 +29,18 @@ Use this skill to help a user install or run MiniMax H3 text-to-video, image-to-
 
 The exact filenames and repositories are configuration, not assumptions. Confirm them from the selected workflow or authoritative model page.
 
+## Included tools
+
+- `scripts/check_models.py`: validate expected model files, sizes, optional SHA-256 values, and leftover download files.
+- `scripts/check_environment.py`: produce a redacted JSON environment report for Python, GPU, ComfyUI, and disk space.
+- `scripts/check_output.py`: inspect a generated media file with `ffprobe` and report streams, duration, and resolution.
+
+Read the relevant reference before choosing a workflow or hardware profile:
+
+- [references/hardware-matrix.md](references/hardware-matrix.md)
+- [references/workflows.md](references/workflows.md)
+- [references/troubleshooting.md](references/troubleshooting.md)
+
 ## Troubleshooting
 
 If ComfyUI fails during import, read the full traceback and identify the Python executable actually used by Desktop. For `comfy_kitchen` errors, compare the installed package with the ComfyUI `requirements.txt` pin, repair only the ComfyUI virtual environment, then verify imports before restarting Desktop. Do not patch core source as a first response.
