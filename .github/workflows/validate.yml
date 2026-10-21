@@ -1,0 +1,14 @@
+name: Validate
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -c "import pathlib, py_compile; [py_compile.compile(str(p), doraise=True) for p in pathlib.Path('scripts').glob('*.py')]"
+      - run: python -m json.tool examples/models.template.json > /dev/null
+      - run: python -m unittest discover -s tests
+      - run: python -c "import json, pathlib; [json.loads(p.read_text(encoding='utf-8')) for p in list(pathlib.Path('examples').glob('*.json')) + list(pathlib.Path('workflows').glob('*.json'))]"

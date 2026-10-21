@@ -1,0 +1,3 @@
+[
+  {"name": "Heretic MiniMax H3 NVFP4 text encoder", "path": "models/text_encoders/qwen3vl_32b_heretic_minimax_h3_nvfp4.safetensors", "size": null, "sha256": null, "source": "user-supplied repository; verify before use", "license": "verify upstream", "verified": false}
+]
