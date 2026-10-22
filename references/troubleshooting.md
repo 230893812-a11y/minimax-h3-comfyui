@@ -2,6 +2,7 @@
 
 | Symptom | Check | Response |
 |---|---|---|
+| H3 KSampler: `ModelSamplingAdvanced` has no attribute `audio_scale` | Check for an AuraFlow sampling override, SD3 image latent workflow, wrong VAE, and CLIPLoader type | Use the H3 template with its video/audio path and `minimax` CLIP type; do not patch a missing attribute into core code. See [RTX 4060 case](rtx4060-laptop-case.md). |
 | CUDA out of memory | ComfyUI log, VRAM use, resolution, duration, batch | Stop the run; reduce batch first, then resolution or duration. Close GPU-heavy apps and retry. |
 | `comfy_kitchen` missing attribute/module | Desktop's actual Python path and ComfyUI `requirements.txt` pin | Repair the pinned package in that ComfyUI environment; verify import before restarting Desktop. |
 | Model missing in node | Exact filename, extension, subfolder, configured shared model paths | Place the file in the expected category and refresh/restart model scanning. |
